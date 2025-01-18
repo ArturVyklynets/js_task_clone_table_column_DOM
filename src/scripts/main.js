@@ -3,9 +3,10 @@
 const collectionOfTr = document.querySelectorAll('tr');
 
 collectionOfTr.forEach((elem) => {
-  const td = document.createElement(elem.firstElementChild.tagName);
+  const tagNameToCreate = elem.firstElementChild.tagName;
 
-  td.textContent =
-    elem.firstChild.nextElementSibling.nextElementSibling.textContent;
+  const td = document.createElement(tagNameToCreate);
+
+  td.textContent = elem.firstElementChild.nextElementSibling.textContent;
   elem.insertBefore(td, elem.lastElementChild);
 });
